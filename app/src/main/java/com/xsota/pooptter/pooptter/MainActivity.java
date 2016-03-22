@@ -12,26 +12,24 @@ import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+import com.xsota.pooptter.pooptter.Utils.AccountUtil;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
+  private final String TAG = "MainActivity";
 
-  @Bind(R.id.login_button)
-  TwitterLoginButton twitterLoginButton;
-
-  // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-  private static final String TWITTER_KEY = "HXKR3lMzq8hJIV3Xp3UycH1MC";
-  private static final String TWITTER_SECRET = "xSnq78vYSOdBgem0gaixsaNOchv6YxCYADFw9OymRiZY5KUAxL";
-
+  @Bind(R.id.login_button) TwitterLoginButton twitterLoginButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+
+    TwitterAuthConfig authConfig = new TwitterAuthConfig(getResources().getString(R.string.twitter_key), getResources().getString(R.string.twitter_secret));
     Fabric.with(this, new Twitter(authConfig));
+
     setContentView(R.layout.activity_main);
 
     ButterKnife.bind(this);
@@ -39,13 +37,16 @@ public class MainActivity extends AppCompatActivity {
     twitterLoginButton.setCallback(new Callback<TwitterSession>() {
       @Override
       public void success(Result<TwitterSession> result) {
-        Log.d("MainActivity", "せいこう");
-        Log.d("userName", result.data.getUserName());
+        Log.d(TAG, "ログインせいこう");
+
+        AccountUtil accountUtil = new AccountUtil(MainActivity.this);
+        accountUtil.saveTwitterAuthToken(result.data);
+
       }
 
       @Override
       public void failure(TwitterException e) {
-        Log.d("しっぱい", e.getMessage());
+        Log.d(TAG, "ログインしっぱい"+e.getMessage());
       }
     });
   }
