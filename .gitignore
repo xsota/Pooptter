@@ -1,4 +1,5 @@
 *.iml
+app/src/main/res/values/twitter_key.xml
 
 ## https://github.com/github/gitignore/blob/master/Android.gitignore
 
