@@ -29,10 +29,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
     ButterKnife.setDebug(true);
     ButterKnife.bind(this);
-    ButterKnife.bind(this);
-    ButterKnife.bind(this);
-    ButterKnife.bind(this);
-    ButterKnife.bind(this);
+    
 
 
     //listView = (ListView) findViewById(R.id.listview);
