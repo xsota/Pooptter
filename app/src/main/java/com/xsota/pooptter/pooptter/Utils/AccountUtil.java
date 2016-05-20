@@ -1,4 +1,4 @@
-package com.xsota.pooptter.pooptter.Utils;
+package com.xsota.pooptter.pooptter.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
