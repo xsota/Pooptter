@@ -1,4 +1,4 @@
-package com.xsota.pooptter.pooptter;
+package com.xsota.pooptter.pooptter.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+import com.xsota.pooptter.pooptter.R;
 import com.xsota.pooptter.pooptter.Utils.AccountUtil;
 
 import butterknife.Bind;
