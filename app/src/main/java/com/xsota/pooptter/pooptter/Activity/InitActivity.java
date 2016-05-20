@@ -13,13 +13,14 @@ import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 import com.xsota.pooptter.pooptter.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+
 
 public class InitActivity extends AppCompatActivity {
   public static final String TAG = "InitActivity";
 
-  @Bind(R.id.login_button) TwitterLoginButton twitterLoginButton;
+  @BindView(R.id.login_button) TwitterLoginButton twitterLoginButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
