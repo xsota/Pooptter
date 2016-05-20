@@ -1,4 +1,4 @@
-package com.xsota.pooptter.pooptter.activitiy;
+package com.xsota.pooptter.pooptter.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
